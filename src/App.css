@@ -1,11 +1,14 @@
-/* Ye browser ke default gaps ko khatam karega */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* App global styles - Tailwind primary */
+html {
+  scroll-behavior: smooth;
 }
 
-body, html, #root {
-  width: 100%;
-  overflow-x: hidden;
+/* Custom utilities if needed */
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }

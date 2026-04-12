@@ -1,12 +1,4 @@
-/* --- 0. DROPDOWN BASICS --- */
-.dropdown-link {
-  display: block;
-}
-
-.dropdown-link-active {
-  background-color: #0d47a1 !important;
-  color: #ffffff !important;
-}
+/* Navbar CSS - Legacy classes removed, Tailwind used in JSX */
 
 /* --- 1. GENERAL LAYOUT & WRAPPER --- */
 .nav-fixed-wrapper {
