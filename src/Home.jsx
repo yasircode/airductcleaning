@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import Seo from './components/Seo';
 
 // Lazy load heavy components
 const Hero = lazy(() => import('./components/Hero'));
@@ -27,6 +28,31 @@ const Yasir = lazy(() => import('./components/Yasir'));
 const Home = () => {
   return (
     <>
+      <Seo
+        title="Air Duct Cleaning in Killeen, TX"
+        description="Premium air duct cleaning, dryer vent cleaning, HVAC cleaning, and chimney services in Killeen and Central Texas. Call (254) 998-3484 for a free estimate."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Killeen Air Duct Cleaners",
+          telephone: "+1-254-998-3484",
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "TX",
+            addressLocality: "Killeen",
+            addressCountry: "US",
+          },
+          areaServed: [
+            "Killeen, TX",
+            "Harker Heights, TX",
+            "Temple, TX",
+            "Belton, TX",
+            "Copperas Cove, TX",
+            "Waco, TX",
+          ],
+          url: "https://killeenairductcleaners.com",
+        }}
+      />
       <Suspense fallback={<div className="flex justify-center items-center h-32">Loading...</div>}>
         <Hero />
         <div className="h-4"></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { servicesData } from './servicesData';
 import Gallery from './Gallery';
+import Seo from './components/Seo';
 const ServicePage = () => {
   const { serviceSlug } = useParams();
   const data = servicesData[serviceSlug];
@@ -21,6 +22,10 @@ const ServicePage = () => {
 
   return (
     <div style={styles.wrapper}>
+      <Seo
+        title={data?.title}
+        description={data?.intro}
+      />
       <br></br>
       <br></br>
       <br></br>

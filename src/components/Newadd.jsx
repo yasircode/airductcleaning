@@ -13,7 +13,7 @@ const Newadd = () => {
     <div className="container">
       <div className="content-wrapper">
         <div className="text-section">
-          <h1 className="title">Professional Duct Cleaning Services Killeen</h1>
+          <h2 className="title">Professional Duct Cleaning Services Killeen</h2>
           <p className="intro-text">
             Here are some key signs which indicates that you should call a professional to clean your air ducts:
           </p>
