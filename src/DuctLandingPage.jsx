@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './DuctLandingPage.css';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/Button';
+import { Modal } from './ui/Modal';
 
 const DuctLandingPage = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -20,10 +23,12 @@ const DuctLandingPage = () => {
     <div className="main-wrapper">
       {/* CTA SECTION */}
       <section className="cta-section" style={{ padding: '20px 10px', minHeight: 'auto' }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '10px' }}>Expert Air Duct Cleaning Services in Killeen, TX</h1>
+        <h2 style={{ fontSize: '1.8rem', marginBottom: '10px' }}>Expert Air Duct Cleaning Services in Killeen, TX</h2>
         <div className="cta-text">
           <p>Enhance your indoor air quality and HVAC system performance with our certified air duct cleaning professionals.</p>
-          <button className="cta-button" style={{ marginTop: '10px' }}>Request a Free Estimate</button>
+          <Button as={Link} to="/contact#estimate" className="cta-button" style={{ marginTop: '10px' }}>
+            Request a Free Estimate
+          </Button>
         </div>
       </section>
 
@@ -68,7 +73,15 @@ const DuctLandingPage = () => {
 
           <div className="footer-col social-col">
             <div className="policy-links">
-              <span>Privacy Policy</span> | <span className="terms-trigger" onClick={() => setShowTerms(true)} style={{cursor: 'pointer'}}>Terms and Conditions</span>
+              <span>Privacy Policy</span> |{' '}
+              <button
+                type="button"
+                className="terms-trigger"
+                onClick={() => setShowTerms(true)}
+                style={{ cursor: 'pointer', background: 'transparent', border: 'none', padding: 0, color: 'inherit' }}
+              >
+                Terms and Conditions
+              </button>
             </div>
             
             <div className="social-row">
@@ -85,7 +98,7 @@ const DuctLandingPage = () => {
                 <div className="s-icon tw">M</div>
               </a>
 
-              <a href="#" className="social-link">
+              <a href="https://www.youtube.com" className="social-link" target="_blank" rel="noopener noreferrer">
                 <div className="s-icon yt">Y</div>
               </a>
             </div>
@@ -130,25 +143,19 @@ const DuctLandingPage = () => {
       </footer>
 
       {/* TERMS MODAL */}
-      {showTerms && (
-        <div className="modal-overlay" onClick={() => setShowTerms(false)}>
-          <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setShowTerms(false)}>×</button>
-            <h2>Terms and Conditions</h2>
-            <div className="modal-body">
-              <p>These terms and conditions govern your use of KILLEEN Air Duct Cleaning Services...</p>
-              <ul>
-                <li style={{fontWeight: 'bold'}}>Introduction</li>
-                <li>Welcome to our website. By accessing and using this website, you agree to adhere to the following Terms and Conditions.</li>
-                <br />
-                <li>Service estimates are subject to on-site inspection.</li>
-                <li>Appointments must be cancelled 24 hours in advance.</li>
-                <li>All services are performed by licensed professionals.</li>
-              </ul>
-            </div>
-          </div>
+      <Modal open={showTerms} onClose={() => setShowTerms(false)} title="Terms and Conditions">
+        <div className="modal-body">
+          <p>These terms and conditions govern your use of KILLEEN Air Duct Cleaning Services...</p>
+          <ul>
+            <li style={{ fontWeight: 'bold' }}>Introduction</li>
+            <li>Welcome to our website. By accessing and using this website, you agree to adhere to the following Terms and Conditions.</li>
+            <br />
+            <li>Service estimates are subject to on-site inspection.</li>
+            <li>Appointments must be cancelled 24 hours in advance.</li>
+            <li>All services are performed by licensed professionals.</li>
+          </ul>
         </div>
-      )}
+      </Modal>
     </div>
   );
 };

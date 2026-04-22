@@ -93,9 +93,9 @@ const AirDuctnew = () => {
       {/* HEADER SECTION */}
       <header style={styles.heroSection}>
         <div style={styles.locationTag}>Serving Central Texas Since 2024</div>
-        <h1 style={styles.title}>
+        <h2 style={styles.title}>
           Air Duct Cleaning in Killeen, TX | Killeen Air Duct Cleaners
-        </h1>
+        </h2>
       </header>
 
       {/* INTRO SECTION */}
