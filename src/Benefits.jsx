@@ -8,26 +8,31 @@ const Benefits = () => {
     {
       id: 1,
       img: "/o11.jpeg", // Replace with your image paths
+      alt: "Air duct cleaning helps remove dust and allergens",
       text: "Air duct cleaning removes contaminants like dust mites, pet dander, mold spores, and pollen from your home's air circulation, leading to cleaner, healthier air."
     },
     {
       id: 2,
       img: "/040.jpeg",
+      alt: "Cleaner indoor air can reduce allergy symptoms",
       text: "By eliminating harmful pollutants, air duct cleaning can help prevent allergies, respiratory problems, and other health issues caused by poor indoor air quality."
     },
     {
       id: 3,
       img: "/025.jpeg",
+      alt: "Clean air ducts improve HVAC airflow and comfort",
       text: "Clean air ducts allow your HVAC system to operate more efficiently, ensuring better airflow and temperature control throughout your home."
     },
     {
       id: 4,
       img: "/030.jpeg",
+      alt: "Efficient HVAC systems can lower energy bills",
       text: "An efficient HVAC system uses less energy, which can lead to lower utility bills and reduced environmental impact."
     },
     {
       id: 5,
       img: "/022.jpeg",
+      alt: "Regular duct cleaning helps extend HVAC system life",
       text: "Regular air duct cleaning in San Antonio helps prevent the buildup of debris that can strain your HVAC system, avoiding costly repairs and extending the system's lifespan."
     }
   ];
@@ -42,7 +47,7 @@ const Benefits = () => {
         {cardData.map((card) => (
           <div key={card.id} className="benefit-card">
             <div className="benefit-img-container">
-              <img src={card.img} alt="Benefit" />
+              <img src={card.img} alt={card.alt} />
             </div>
             <div className="benefit-text-container">
               <p>{card.text}</p>

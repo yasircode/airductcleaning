@@ -2,7 +2,11 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[100vh] w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-center px-4 md:px-8 lg:px-16 overflow-hidden" style={{backgroundImage: `url('/hero-vans.jpeg')`}} role="banner">
+    <section
+      className="relative min-h-[calc(100svh-90px)] w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-center px-4 md:px-8 lg:px-16 overflow-hidden"
+      style={{ backgroundImage: `url('/hero-vans.jpeg')` }}
+      role="banner"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto w-full py-12 md:py-20 lg:py-28 text-white">

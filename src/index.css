@@ -1,7 +1,27 @@
-/* Global resets - Tailwind handles most, keep minimal */
-* {
-  box-sizing: border-box;
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --brand-50: #f2f6ff;
+  --brand-100: #e6efff;
+  --brand-500: #2f6cff;
+  --brand-700: #1842aa;
+  --brand-900: #0b1f4f;
+
+  /* Neutrals */
+  --text: #0f172a;
+  --muted: #475569;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --border: rgba(15, 23, 42, 0.10);
+
+  /* Radii / shadows */
+  --radius-lg: 14px;
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
+/* Global resets */
+* { box-sizing: border-box; }
 
 html, body, #root {
   margin: 0;
@@ -9,4 +29,37 @@ html, body, #root {
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background: var(--surface);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Consistent media defaults */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@layer base {
+  h1, h2, h3 {
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  h1 { @apply text-3xl md:text-5xl font-black; }
+  h2 { @apply text-2xl md:text-3xl font-extrabold; }
+  h3 { @apply text-xl md:text-2xl font-bold; }
+
+  p { color: var(--muted); }
+}
+
+@layer components {
+  .site-container { @apply mx-auto w-full max-w-6xl px-4; }
+  .section-pad { @apply py-14 md:py-20; }
 }
